@@ -2,7 +2,7 @@
 
 <hr>
 
-##### Table of Contents
+### Table of Contents
 
 - How `rand` works 
 
@@ -40,7 +40,7 @@
 
 <hr>
 
-#### How `rand()` works:
+## How `rand()` works:
 
 1. **Pseudo-Random Number Generation**: The `rand()` function generates a sequence of numbers that appear random, but are actually deterministic. This means the sequence is based on an initial value called the seed.
 
@@ -50,103 +50,108 @@
    next_value=(current_seed×a+c)modm
    where a, c, and m are constants chosen by the implementation.
 
-##### Why it's pseudo-random:
+### Why it's pseudo-random:
 
 * **Deterministic Nature**: Since `rand()` relies on an initial seed and a deterministic algorithm, the sequence of numbers it generates is entirely determined by the seed and the algorithm. If you use the same seed, you'll get the same sequence of numbers every time.
 
 * **Reproducibility**: This deterministic behavior is useful for debugging and testing because it allows programmers to reproduce issues that depend on random numbers.
 
-##### Why it gives the same value every time you run the file:
+### Why it gives the same value every time you run the file:
 
 * **Seed Initialization**: If your program does not explicitly change the seed (by calling `srand()` with a different value), `rand()` will use the same seed every time the program runs.
 
 * **Default Seed**: If the program does not call `srand()` explicitly, many C implementations initialize the seed based on a constant value (often 1). This results in the same sequence of numbers each time the program is executed.
 
-##### How to get different values:
+### How to get different values:
 
 * **Using `srand()`**: To get different sequences of random numbers in different runs of your program, you can use `srand()` to set a different seed before calling `rand()`. Common practice is to use `srand(time(NULL))`, which sets the seed based on the current time, ensuring a different sequence in each run. `We can also use getpid() which will act as a unique seed for srand(). srand(getpid())` 
 
 <hr>
 
-#### Pointers
+## Pointers
 
 ```
-*Stack is a block of memory. One of the components of application memory. Whenever a main() function is invoked a **Stack frame** is created which is some memory allocated to the execution of main function. Anything inside the main function that needs memory will be given from the created **stack frame**.*
+*Stack is a block of memory. One of the components of application memory.Whenever a main() function is invoked a **Stack frame**
+is created which is somememory allocated to the execution of main function. Anything inside the main function that needs memory
+will be given from the created **stack frame**.*
 
-*If main functions call another function, space or another stack frame is given to that function. Just like properties of stack which is LIFO, the newly created stack frame will be executed and below it will be paused untill it is finished or it returns something*
+*If main functions call another function, space or another stack frame is given to that function. Just like properties of stack
+which is LIFO, the newly created stack frame will be executed and below it will be paused untill it is finished or it returns
+something*
 ```
 
-##### ***Basic Information of Pointers***
+### ***Basic Information of Pointers***
 
-<img title="" src="file:///C:/Users/gj979/OneDrive/Pictures/Typedown/538517f0-2502-4294-8f97-022877537245.png" alt="538517f0-2502-4294-8f97-022877537245" style="zoom:33%;">
+![image](https://github.com/user-attachments/assets/b95ed1a3-c9a9-4a8e-90d7-923719be7792)
 
 ***IMPORTANT*** - Points at the starting or least significant bit and then continues from that point to the relevant size.*
 
-<img title="" src="file:///C:/Users/gj979/OneDrive/Pictures/Typedown/dbf1e287-7cf0-46c6-8116-141910ea8ffd.png" alt="dbf1e287-7cf0-46c6-8116-141910ea8ffd" style="zoom:33%;">
+![image](https://github.com/user-attachments/assets/fdbf494b-c892-40a8-8785-15a1826bdb52)
 
-<img src="file:///C:/Users/gj979/OneDrive/Pictures/Typedown/ab9e4cd5-e701-4673-8092-ae4c8d8eeee7.png" title="" alt="ab9e4cd5-e701-4673-8092-ae4c8d8eeee7" style="zoom:33%;">
+![image](https://github.com/user-attachments/assets/ad3138a2-0908-4b36-bd8d-549fd96a553e)
 
-<img src="file:///C:/Users/gj979/OneDrive/Pictures/Typedown/8cc8811b-e799-4a78-a173-5e82a5666f1a.png" title="" alt="8cc8811b-e799-4a78-a173-5e82a5666f1a" style="zoom:33%;">
+![image](https://github.com/user-attachments/assets/bf4bf72e-a024-4361-89e0-353693f5c55d)
 
-##### **_call by value_**
+### **_call by value_**
 
-<img title="" src="file:///C:/Users/gj979/OneDrive/Pictures/Typedown/718f3c65-a68b-497b-ba6b-177b4725684e.png" alt="718f3c65-a68b-497b-ba6b-177b4725684e" data-align="inline" style="zoom:67%;"><img title="" src="file:///C:/Users/gj979/OneDrive/Pictures/Typedown/d858b68a-ee6c-4f66-b46c-011b14b2d197.png" alt="d858b68a-ee6c-4f66-b46c-011b14b2d197" data-align="inline">
+![image](https://github.com/user-attachments/assets/b6f40292-0704-438e-8085-2ba88ad8d83d)
 
-##### ***call by reference***
+### ***call by reference***
 
-<img title="" src="file:///C:/Users/gj979/OneDrive/Pictures/Typedown/aef7484f-4953-4877-a8ef-dfa1eb7eb52e.png" alt="aef7484f-4953-4877-a8ef-dfa1eb7eb52e" style="zoom:33%;">
+![image](https://github.com/user-attachments/assets/3699e514-ac2b-468d-98f1-940b00824b1e)
 
-##### ***Pointers and Arrays***
+### ***Pointers and Arrays***
 
 The name of an array in C behaves like a constant pointer to the first element of the array.
 
-<img title="" src="file:///C:/Users/gj979/OneDrive/Pictures/Typedown/10945205-676b-4697-b555-76132e06fe38.png" alt="10945205-676b-4697-b555-76132e06fe38" style="zoom:100%;">
-
-<img title="" src="file:///C:/Users/gj979/OneDrive/Pictures/Typedown/2ab7d36b-2e23-4164-900b-ab30794d0d6f.png?msec=1721968283290" alt="2ab7d36b2e234164900bab30794d0d6f" style="zoom:33%;">
-
-<img title="" src="file:///C:/Users/gj979/OneDrive/Pictures/Typedown/5eabf0a0-78f0-4f31-8f02-83a2df4d797e.png?msec=1721968815505" alt="5eabf0a078f04f318f0283a2df4d797e" style="zoom:50%;" data-align="inline">
+![image](https://github.com/user-attachments/assets/dcf237cf-0380-4517-867c-2261346aac28)
 
 ***Arrays as function arguments***: **When compiler sees the array as function argument, It does not copy the whole array, it creates a pointer variable of the same data type and copies the address of the first element of the array**. [ as array name points to the address of first element of the array]. Arrays are always passed as reference parameters
 
-<img src="file:///C:/Users/gj979/OneDrive/Pictures/Typedown/0bbb7bc8-378e-4b99-ab81-b7dff48769e9.png" title="" alt="0bbb7bc8-378e-4b99-ab81-b7dff48769e9" style="zoom:50%;">
+![image](https://github.com/user-attachments/assets/c48f8c32-4eb4-401c-a758-bc4706deb953)
 
-##### ***Pointers and Strings / Character Arrays***
+### ***Pointers and Strings / Character Arrays***
 
-![685340a8-37d7-411e-9b45-5826959228d9](file:///C:/Users/gj979/OneDrive/Pictures/Typedown/685340a8-37d7-411e-9b45-5826959228d9.png)
+![image](https://github.com/user-attachments/assets/c9cc9998-1bcf-4fcc-bafd-ba37c35035f9)
 
 A string in C needs to end in a null character. `\0`. It counts only till `\0` That's why size of character array = size of string + 1. *Similar to relation of numb arrays and pointers, the name of the char array points to the location of first character of string. Char Arrays are always passed to function by reference.*
 
-<img title="" src="file:///C:/Users/gj979/OneDrive/Pictures/Typedown/a9526363-130a-4e85-86c3-c386457ad984.png" alt="a9526363-130a-4e85-86c3-c386457ad984" style="zoom:50%;">
+![image](https://github.com/user-attachments/assets/4f870559-6887-4fbc-b5d8-35cb1f700d40)
 
 <hr>
 
-#### Pointers and Multi-Dimensional arrays
+### Pointers and Multi-Dimensional arrays
 
 In the case of 2-D Arrays MxN, The pointer returns the address of 1-D array of N integers. 
 
-<img src="file:///C:/Users/gj979/OneDrive/Pictures/Typedown/4fbb6633-21a9-4cac-9188-7ca2864461d2.png" title="" alt="4fbb6633-21a9-4cac-9188-7ca2864461d2" style="zoom:50%;">
+![image](https://github.com/user-attachments/assets/b60a5101-a7dc-4e2e-bdeb-a17a632afdb4)
 
 **IMPORTANT**
 
 ```
-In `*B` what happens is = Simple B gives us the address of the first element of the 2D Array which is just an 1D array of 3 integers which will be the address of the first byte of that 1-D address because thats how pointer works normally. Now `*` will gives us the value at that address which is the entire array B[0] and we know the array name points to the memory address of the first element which will gives us the value of 400.
+In `*B` what happens is = Simple B gives us the address of the first element of the 2D Array which is just an 1D array of 3 integers
+which will be the address of the first byte of that 1-D address because thats how pointer works normally. Now `*` will gives us the
+value at that address which is the entire array B[0] and we know the array name points to the memory address of the first element
+which will gives us the value of 400.
 ```
+![image](https://github.com/user-attachments/assets/1230c7df-cc62-41ab-a433-0dcabec3d433)
 
-<img src="file:///C:/Users/gj979/OneDrive/Pictures/Typedown/41c73f31-4652-469c-a925-b607739fc5e3.png" title="" alt="41c73f31-4652-469c-a925-b607739fc5e3" style="zoom:50%;">
-
-![3f423557-15d7-4ba4-b561-7add7ed3baa6](file:///C:/Users/gj979/OneDrive/Pictures/Typedown/3f423557-15d7-4ba4-b561-7add7ed3baa6.png)
+![image](https://github.com/user-attachments/assets/76a31912-f228-4899-8bd8-30e2d04d1c68)
 
 <hr>
 
-#### Pointers and Dynamic Memory
+### Pointers and Dynamic Memory
 
-![4c86832f-edf8-45b9-abe5-2706a3b6b126](file:///C:/Users/gj979/OneDrive/Pictures/Typedown/4c86832f-edf8-45b9-abe5-2706a3b6b126.png)
+![image](https://github.com/user-attachments/assets/a4a58f3d-100f-4afa-aef1-b4fc4e66047f)
 
 ```
-When programs exceeds the limilted space provided to stack then it is known as stackoverflow. Example: Non-Conditional recursion. **PROBLEM WITH STACK**: No control over dynamic allocation of memory of variables, Not able to manipulate the scope of the variable, Fixed memory which does not grow. TO SOLVE THIS WE HAVE **HEAP** . Heap = dynamic memory or free store. HEAP is not dependent, anything allocated on the heap is not automatically deallocated when the function completes like on the stack and we can control the whole lifetime
+When programs exceeds the limilted space provided to stack then it is known as stackoverflow. Example: Non-Conditional recursion.
+**PROBLEM WITH STACK**: No control over dynamic allocation of memory of variables, Not able to manipulate the scope of the variable,
+Fixed memory which does not grow. TO SOLVE THIS WE HAVE **HEAP** . Heap = dynamic memory or free store. HEAP is not dependent, anything
+allocated on the heap is not automatically deallocated when the function completes like on the stack and we can control the whole lifetime
 ```
 
-##### **HEAP**
+#### **HEAP**
 
 For Dynamic allocation of the memory for variables and operations. Allocating memory at run time. 
 
@@ -208,31 +213,31 @@ For Dynamic allocation of the memory for variables and operations. Allocating me
 
 <hr>
 
-##### Pointers as Function returns
+### Pointers as Function returns
 
 **ONE TIP:** Check the execution order of functions on stack for debugging. Also check what happens if they are over, the memory of them from stacks gets removed and is on high risk of being consumed by other function and getting overwritten.
 
 **AVOID**: Calling Pointers as function returns in top-down manner in stack calls. which means avoid calling pointers as function returns from someother function which exist above it in stack calls. Danger of being overwritten. 
 
-<img title="" src="file:///C:/Users/gj979/OneDrive/Pictures/Typedown/caff3ae3-d1f3-44ad-8603-0894970d4ee4.png" alt="caff3ae3-d1f3-44ad-8603-0894970d4ee4" style="zoom:33%;">
+![image](https://github.com/user-attachments/assets/1977c2bd-c9f7-428d-ba9d-5966f81d9d1d)
 
 <hr>
 
-##### Function Pointers
+### Function Pointers
 
 Pointers locating to the `address or entry point of the function`
 
 `Name of the function also returns the pointer`
 
-<img src="file:///C:/Users/gj979/OneDrive/Pictures/Typedown/4901da99-a646-4f42-aa85-5e82b04a2ceb.png" title="" alt="4901da99-a646-4f42-aa85-5e82b04a2ceb" style="zoom:50%;">
+![image](https://github.com/user-attachments/assets/188a2bdc-fe31-44d2-b617-8cbccf88090f)
 
-<img src="file:///C:/Users/gj979/OneDrive/Pictures/Typedown/e5a5f712-099c-486c-9728-da778ab99ee4.png" title="" alt="e5a5f712-099c-486c-9728-da778ab99ee4" style="zoom:50%;">
+![image](https://github.com/user-attachments/assets/7be4e9c7-2c6e-425d-b0f4-46deb4b68cc5)
 
-<img title="" src="file:///C:/Users/gj979/OneDrive/Pictures/Typedown/595922e6-abc2-4e8b-ac2f-7d4f9c7f9246.png" alt="595922e6-abc2-4e8b-ac2f-7d4f9c7f9246" style="zoom:50%;">
+![image](https://github.com/user-attachments/assets/7c254bef-53c6-43b1-a263-fd7951271fec)
 
 <hr>
 
-#### `fork()`
+## `fork()`
 
 The `fork()` function in C is a system call used to create a new process, which is known as the child process. When `fork()` is called, it creates a duplicate of the calling process (the parent). Both processes will execute the next instruction following the `fork()` call. 
 
@@ -272,11 +277,11 @@ int main() {
 
 <hr>
 
-#### Ncurses
+## Ncurses
 
 Ncurses (New Curses) is a library for creating text-based user interfaces in C. It provides a set of functions for manipulating the terminal screen, handling user input, and creating windows and menus.
 
-##### 1. Screens
+### 1. Screens
 
 When compiling, you must link against the Ncurses library using the `-lncurses` flag. Which means include `library ncurses` command  = `gcc ncurses.c -o ncurses -lncurses`
 
@@ -310,7 +315,7 @@ int main(){
 }
 ```
 
-##### 2. X and Y
+### 2. X and Y
 
 In Ncurses, the concepts of X and Y coordinates are fundamental for positioning the cursor and displaying content on the terminal screen.
 
@@ -346,7 +351,7 @@ int main()
 
 * **`mvprintw(int y, int x, const char *str)`**: This function combines moving the cursor and printing a string in one call. For example, `mvprintw(10, 20, "Hello World!");` places "Hello World!" at the specified position.
 
-##### 3. Arrow
+### 3. Arrow
 
 In Ncurses, arrow keys are represented by special key codes that are returned by the `getch()` function when the corresponding arrow key is pressed. 
 
@@ -422,7 +427,7 @@ return 0;
 
 <hr>
 
-### `select()`
+## `select()`
 
 `select()` is a system call used to monitor multiple file descriptors to see if they are ready for I/O operations. It is commonly used in network programming and other scenarios where you need to handle multiple input/output streams concurrently without using threads or non-blocking I/O.
 
@@ -448,7 +453,7 @@ int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struc
 
 * **`timeout`**: A pointer to a `struct timeval` specifying the maximum time `select()` should wait for an event. If `timeout` is `NULL`, `select()` will block indefinitely until an event occurs. If `timeout` is set to zero, `select()` will return immediately, performing a non-blocking check.
 
-##### How `fd_set` Works
+### How `fd_set` Works
 
 `fd_set` is essentially a set data structure / array that can hold a fixed number of file descriptors. Operations on `fd_set` are done using macros:
 
@@ -497,7 +502,7 @@ int main() {
 
 <hr>
 
-### Common System API Types in C
+## Common System API Types in C
 
 * **`pid_t`**
   
@@ -549,11 +554,11 @@ int main() {
 
 <hr>
 
-### Sockets
+## Sockets
 
 Socket programming in C is a method that enables communication between two nodes over a network. A socket serves as an endpoint for sending and receiving data, allowing applications to exchange information across different devices or processes.
 
-##### Types of Sockets
+### Types of Sockets
 
 Sockets can be categorized based on the communication protocols they use:
 
@@ -570,7 +575,7 @@ int socket(int domain, int type, int protocol);
 
 *return type* : A file descriptor for a new socket is returned. On error -1 is returned
 
-##### Binding the Socket `bind()`
+### Binding the Socket `bind()`
 
 For server applications, the socket must be bound to an **IP address and port number** using the `bind()` function. This associates the socket with a specific address and allows it to listen for incoming connections This is crucial for server applications that need to listen for incoming connections on a specific port. 
 
@@ -578,7 +583,7 @@ For server applications, the socket must be bound to an **IP address and port nu
 int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
 ```
 
-##### Connection of the Socket `connect()`
+### Connection of the Socket `connect()`
 
 The `connect()` function in C is used to establish a connection between a client socket and a server socket. It is a crucial part of socket programming, particularly for TCP/IP communications.
 
@@ -602,14 +607,14 @@ int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
 
 * **On failure**, it returns `-1`, and the global variable `errno` is set to indicate the error.
 
-##### Difference between bind and connect
+### Difference between bind and connect
 
 * **`bind()`** associates a socket with a specific local address and port number. Binds the socket to a specific IP address and port number. Allows the socket to accept incoming connections. Allows a socket to accept incoming connections
 * **`connect()`** establishes a connection between a client socket and a server socket by specifying the remote address and port. Establishes a connection between a client and server socket.
 
 Note that the bind function binds the server to the specified port and allows it to accept connections from any IP address. When a client connects, it establishes a communication channel to the server, allowing it to send and receive data.
 
-##### Typical Client-Server Scenario
+### Typical Client-Server Scenario
 
 * **Server:**
   
@@ -623,7 +628,7 @@ Note that the bind function binds the server to the specified port and allows it
   
   * Use `send()` and `recv()` to exchange data between the client and server after establishing the connection.
 
-##### Listening for Connections
+### Listening for Connections
 
 The server uses the `listen()` function to indicate that it is ready to accept incoming connections. The function specifies the maximum number of pending connections that can be queued
 
@@ -631,7 +636,7 @@ The server uses the `listen()` function to indicate that it is ready to accept
 int listen(int sockfd, int backlog);
 ```
 
-##### Accepting Connections
+### Accepting Connections
 
 When a client attempts to connect, the server calls the `accept()` function, which establishes a connection and returns a new socket descriptor for the communication with that specific client
 
@@ -645,7 +650,7 @@ The `accept()` function is used to accept a connection on the socket specified
 
 `c = accept(s, (struct sockaddr *)&cli, &addrlen);`  2nd param = This is a pointer to a `sockaddr` structure that will be filled with the address of the connecting client.  3rd param = On return, `accept()` will modify `addrlen` to contain the actual size of the returned address. Should be initialized to the size of the `cli` structure before calling `accept()`
 
-##### Sending and Receiving Data
+### Sending and Receiving Data
 
 Once a connection is established, data can be sent and received using the `send()` and `recv()` functions. These functions handle the transmission of data over the established socket:
 
@@ -659,12 +664,12 @@ recv(sockfd, buffer, buffer_size, flags);
 * **buffer**: Where received data will be stored.
 * **length** and **buffer_size**: The sizes of the data being sent and received, respectively
 
-###### `write()` and `read()`
+#### `write()` and `read()`
 
 * **`send()`**: This function is similar to `write()` but provides additional options for controlling how the data is sent (e.g., using flags).
 * **`recv()`**: This function is similar to `read()` but also allows for more control over how data is received.
 
-##### Closing the Socket
+### Closing the Socket
 
 After communication is complete, the socket should be closed using the `close()` function to free up resources
 
@@ -681,7 +686,7 @@ close()
 
 <hr>
 
-### Struct `sockaddr_in`
+## Struct `sockaddr_in`
 
 This structure is used to store **information about an IPv4 socket address**, which includes the following members
 
