@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 5rem;
+            margin: 0;
+            color: #ff6f61;
+            animation: bounce 1s infinite;
+        }
+        .message {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+        .image {
+            margin: 2rem 0;
+        }
+        .image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .joke {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 1rem 0;
+        }
+        .fun-facts {
+            font-size: 1rem;
+            color: #777;
+            margin: 1rem 0;
+            text-align: left;
+        }
+        .fun-facts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .fun-facts li {
+            margin-bottom: 0.5rem;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <div class="message">
+            Uh-oh! The page you're looking for has vanished into the digital void.<br>
+            It might be off on an epic quest or just enjoying a well-deserved break.
+        </div>
+        <div class="image">
+            <img src="https://placekitten.com/400/300" alt="A curious kitten looking around">
+        </div>
+        <div class="joke">
+            <p>Why don't programmers like nature?</p>
+            <p>It has too many bugs!</p>
+        </div>
+        <div class="fun-facts">
+            <h2>Fun Facts:</h2>
+            <ul>
+                <li>The first 404 error was reported in 1992.</li>
+                <li>Did you know that the term "404" refers to the HTTP status code for a missing page?</li>
+                <li>404 errors are a part of the HTTP standard, which was established in 1991.</li>
+                <li>Some websites intentionally use custom 404 pages to add humor or creativity!</li>
+            </ul>
+        </div>
+        <a href="/">Return to the Homepage</a>
+    </div>
+</body>
+</html>
+
