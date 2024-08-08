@@ -53,23 +53,23 @@ The provided Rust code implements a basic multithreaded HTTP web server using a 
 
 #### C
 
-- **Server Initialization (srv_init):** Initializes and binds the server socket to an IP address and port, preparing it for listening.<br><br>
+- **Server Initialization (srv_init):** Initializes and binds the server socket to an IP address and port, preparing it for listening.
 
-- **Client Connection (cli_accept):** Accepts incoming client connections, creating a new socket for each client.<br><br>
+- **Client Connection (cli_accept):** Accepts incoming client connections, creating a new socket for each client.
 
-- **HTTP Request Parsing (parse_http):** Parses the HTTP request to extract the HTTP method and URL.<br><br>
+- **HTTP Request Parsing (parse_http):** Parses the HTTP request to extract the HTTP method and URL.
 
-- **Client Request Reading (cli_read):** Reads the HTTP request data from the client socket into a buffer.<br><br>
+- **Client Request Reading (cli_read):** Reads the HTTP request data from the client socket into a buffer.
 
-- **HTTP Response Header (http_headers):** Constructs and sends the HTTP response headers to the client.<br><br>
+- **HTTP Response Header (http_headers):** Constructs and sends the HTTP response headers to the client.
 
-- **HTTP Response Body (http_response):** Sends the HTTP response body, including content type and length, to the client.<br><br>
+- **HTTP Response Body (http_response):** Sends the HTTP response body, including content type and length, to the client.
 
-- **File Reading (readfile):** Reads the contents of a file into memory, handling file I/O operations.<br><br>
+- **File Reading (readfile):** Reads the contents of a file into memory, handling file I/O operations.
 
-- **Send File (sendfile):** Sends a file's contents to the client, including appropriate headers.<br><br>
+- **Send File (sendfile):** Sends a file's contents to the client, including appropriate headers.
 
-- **Client Connection Handling (cli_conn):** Handles the client connection, including reading the request, parsing it, and sending back the appropriate response based on the request URL.<br><br>
+- **Client Connection Handling (cli_conn):** Handles the client connection, including reading the request, parsing it, and sending back the appropriate response based on the request URL.
 
 - **Main Function (main):** Entry point of the server program, initializes the server, and continuously accepts and processes client connections.
 
